@@ -26,4 +26,4 @@ jobs:
       run: dotnet pack --configuration Realese
 
     - name: Publish
-       run: dotnet nuget push "./GravatarPK/bin/Release/GravatrPK.1.0.0.nupkg" -k ${{ secrets.NUGETTOKEN }} -s https://api.nuget.org/v3/index.json
+       run: dotnet nuget push "C:\Projects\PKG\Novapasta\GravatarPK/GravatarPK/bin/Release/GravatrPK.1.0.0.nupkg" -k ${{ secrets.NUGETTOKEN }} -s https://api.nuget.org/v3/index.json
