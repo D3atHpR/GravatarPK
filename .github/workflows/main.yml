@@ -1,9 +1,9 @@
 name: Build and deploy package
 on: 
   push:
-    branchs:
-      - main
-
+    branches-ignore:
+      - dev
+    
 jobs: 
   build-and-deploy:
     runs-on: ubuntu-latest
