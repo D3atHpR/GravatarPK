@@ -5,7 +5,7 @@ using System;
 namespace GravatarPK;
 public static class GravatarExtension
 {
-    public static string ToGravatarPK(this string email)
+    public static string ToGravatarPK(this string email, int size = 80)
     {
         if (string.IsNullOrEmpty(email))
             return string.Empty;
