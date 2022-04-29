@@ -14,7 +14,7 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version:'6.0.x'
+        dotnet-version: 6.0.x
 
     - name: Build with dotnet
       run: dotnet build --configuration Realese
@@ -26,4 +26,4 @@ jobs:
       run: dotnet pack --configuration Realese
 
     - name: Publish
-       run: dotnet nuget push "C:\Projects\PKG\Novapasta\GravatarPK/GravatarPK/bin/Release/GravatrPK.1.0.0.nupkg" -k ${{ secrets.NUGETTOKEN }} -s https://api.nuget.org/v3/index.json
+      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
