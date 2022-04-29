@@ -1,0 +1,30 @@
+name: Build and deploy package
+on: 
+  push:
+    branchs:
+      - main
+
+jobs: 
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/chechout@main
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version:'6.0.x'
+
+    - name: Build with dotnet
+      run: dotnet build --configuration Realese
+
+    - name: Test
+      run: dotnet test
+
+    - name: Create the Package
+      run: dotnet pack --configuration Realese
+
+    - name: Publish
+       if: startsWith(github.ref, 'refs/heads/release')
+       run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETTOKEN}}
