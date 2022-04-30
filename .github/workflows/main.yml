@@ -38,9 +38,13 @@ jobs:
     - name: Build
       run: dotnet build $SOLUTION --configuration Release
       
-    
-   
+    - name: Test
+      run: dotnet test
+      
+    - name: Create the Package
+      run: dotnet pack $SOLUTION --configuration Release
+  
       
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
-      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETTOKEN}}
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGETTOKEN}}
