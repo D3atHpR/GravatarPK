@@ -1,6 +1,6 @@
 # GravatarPK
-####By:D3
+#### By:D3
 
 | Package | Version | Downloads |
 |---------|-------|-------|
-| `GravatarPK` | [![NuGet](https://img.shields.io/nuget/v/GravatarPK.svg)](https://nuget.org/packages/GravatarPK) | [![NuGet](https://img.shields.io/nuget/v/GravatarPK.svg)](https://nuget.org/packages/GravatarPK)
+| `GravatarPK` | [![NuGet](https://img.shields.io/nuget/v/GravatrPK.svg)](https://nuget.org/packages/GravatrPK) | [![NuGet](https://img.shields.io/nuget/v/GravatrPK.svg)](https://nuget.org/packages/GravatrPK)
