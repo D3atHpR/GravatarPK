@@ -38,8 +38,8 @@ jobs:
     - name: Build
       run: dotnet build $SOLUTION --configuration Release
       
-    - name: Run tests
-      run: dotnet test --no-restore
+    
+   
       
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
